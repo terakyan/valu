@@ -1,7 +1,7 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="{{ route('home') }}">
+<header>
+    <div class="union-container">
+        <div class="logo-container">
+            <div class="logo">
                 <svg width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M70.1462 36.926C69.1081 36.926 68.2925 37.74 68.2183 38.702V38.776C67.8476 56.24 53.5366 70.226 36.0371 70.226C18.241 70.226 3.78167 55.796 3.78167 38.036C3.78167 23.828 13.0505 11.766 25.8785 7.47401C26.0268 7.40001 26.1751 7.40001 26.3975 7.32601C27.0649 7.03001 27.4356 6.36401 27.4356 5.62401C27.4356 4.58801 26.62 3.70001 25.5077 3.70001C25.3594 3.70001 25.2111 3.70001 25.0628 3.77401C24.9145 3.77401 24.8404 3.84801 24.6921 3.84801C10.3811 8.65801 0 22.126 0 38.036C0 57.942 16.0906 74 36.0371 74C55.5386 74 71.4068 58.534 72 39.22C72 38.998 72 38.776 72 38.554C71.8517 37.666 71.1102 36.926 70.1462 36.926Z" fill="#7297AB"/>
                     <path d="M63.9176 19.906C62.2863 20.72 61.6931 22.792 62.5087 24.42C63.3244 26.048 65.4006 26.788 67.0319 25.9L70.9619 23.902C71.1843 23.754 71.4809 23.68 71.7775 23.754L70.2945 20.942C70.2204 21.238 69.9979 21.386 69.7013 21.534L65.9938 23.458C65.4006 23.754 65.0298 23.828 64.8074 23.236C64.5108 22.718 64.7332 22.422 65.3264 22.126L69.034 20.202C69.2564 20.054 69.553 19.98 69.8496 20.054L68.3666 17.242C68.2925 17.538 68.07 17.686 67.7734 17.834L63.9176 19.906Z" fill="#A71C20"/>
@@ -15,57 +15,47 @@
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M36.037 62.752V39.22C34.1833 36.852 31.3656 35.372 28.2512 35.372C22.5417 35.372 17.9443 40.33 17.9443 46.472C17.9443 55.13 28.5478 62.752 36.037 62.752Z" fill="#ED1C24"/>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M43.8229 35.372C40.7086 35.372 37.8909 36.852 36.0371 39.22V62.752C43.5263 62.752 54.1298 55.056 54.1298 46.472C54.1298 40.33 49.5325 35.372 43.8229 35.372Z" fill="#A71C20"/>
                 </svg>
-            </a>
-        </x-slot>
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
-
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
 
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
+            <span class="logo-font">Быстрое решение<br>для домашних животных</span>
+        </div>
+        <img width="20" height="18" src="{!! asset('/img/union.svg') !!}" alt="union" class="union union_js">
+        <img width="22" height="22" src="{!! asset('/img/close.svg') !!}" alt="union" class="close close_js hide">
+    </div>
+    <div class="nav-container">
+        <div class="contact-container">
+            <nav class="navigation mobile-navigation mobile_navigation_js hide">
+                <ul>
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                    <li><a href="{!! route('home') !!}" class="nav-font normal-font nav-item @if(\Request::route() && \Request::route()->action['as'] == 'home') active @endif">Главная</a></li>
+                    <li><a href="{!! route('about') !!}" class="nav-font normal-font nav-item @if(\Request::route() && \Request::route()->action['as']  == 'about') active @endif">О компании</a></li>
+                    <li><a href="{!! route('contact') !!}" class="nav-font  normal-font nav-item @if(\Request::route() && \Request::route()->action['as']  == 'contact') active @endif">Контактная информация</a></li>
+                </ul>
+            </nav>
+            <div class="contact-font contact">
+                <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 2.5625C18 1.56562 17.19 0.75 16.2 0.75H1.8C0.81 0.75 0 1.56562 0 2.5625V13.4375C0 14.4344 0.81 15.25 1.8 15.25H16.2C17.19 15.25 18 14.4344 18 13.4375V2.5625ZM16.2 2.5625L9 7.09375L1.8 2.5625H16.2ZM16.2 13.4375H1.8V4.375L9 8.90625L16.2 4.375V13.4375Z" fill="#7297AB"/>
+                </svg>
+                <span>valu.manufacturing@gmail.com</span>
             </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
+            <div class="contact-font contact">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 13.5V17C18 17.5 17.5 18 17 18C7.6 18 0 10.4 0 1C0 0.5 0.5 0 1 0H4.5C5 0 5.5 0.5 5.5 1C5.5 2.2 5.7 3.5 6.1 4.6C6.2 4.9 6.1 5.3 5.9 5.6L3.6 7.8C5 10.6 7.4 12.9 10.2 14.4L12.4 12.2C12.6 12 12.8 11.9 13.1 11.9C13.2 11.9 13.3 11.9 13.4 11.9C14.5 12.3 15.7 12.5 17 12.5C17.5 12.5 18 13 18 13.5Z" fill="#7297AB"/>
+                </svg>
+                <span>+374 77 300 424</span>
             </div>
+        </div>
 
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
+        <div class="navigation-container">
+            <nav class="navigation desktop-navigation">
+                <ul>
+                    <li><a href="{!! route('home') !!}" class="nav-font normal-font nav-item @if(\Request::route() && \Request::route()->action['as']  == 'home') active @endif">Главная</a></li>
+                    <li><a href="{!! route('about') !!}" class="nav-font normal-font nav-item @if(\Request::route() && \Request::route()->action['as']  == 'about') active @endif">О компании</a></li>
+                    <li><a href="{!! route('contact') !!}" class="nav-font  normal-font nav-item @if(\Request::route() && \Request::route()->action['as']  == 'contact') active @endif">Контактная информация</a></li>
+                </ul>
+            </nav>
 
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+            <button class="normal-font red-button-font red-button">Скачать каталог</button>
+        </div>
+    </div>
+</header>
