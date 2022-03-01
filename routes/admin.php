@@ -4,20 +4,20 @@ Route::get('/',function (){
     return view('admin.index');
 })->name('dashboard');
 
+Route::group(['prefix'=>'products'],function (){
+    Route::get('/','Admin\ProductsController@index')->name('admin.products');
+    Route::get('/new','Admin\ProductsController@getNew')->name('admin.products.new');
+    Route::post('/new','Admin\ProductsController@postNew')->name('admin.products.new.post');
+    Route::group(['prefix'=>'edit'],function (){
+        Route::get('/{id}','Admin\ProductsController@getEdit')->name('admin.products.edit');
+        Route::post('/{id}','Admin\ProductsController@postEdit')->name('admin.products.edit.post');
+    });
+    Route::post('/delete','Admin\ProductsController@postDelete')->name('admin.products.delete.post');
+
+});
+
 Route::group(['prefix'=>'settings'],function (){
-    Route::get('/','SettingsController@index')->name('admin.settings');
-
-    Route::get('/add-new-country','SettingsController@newCountry')->name('admin.settings.add_country');
-    Route::post('/add-new-country','SettingsController@postNewCountry');
-
-    Route::get('/edit-country/{id}','SettingsController@editCountry')->name('admin.settings.edit_country');
-    Route::post('/edit-country/{id}','SettingsController@postNewCountry');
-    Route::post('/delete-country/{id}','SettingsController@deleteCountry')->name('admin.settings.delete_country');
-
-    Route::get('/add-new-language','SettingsController@newLanguage')->name('admin.settings.add_language');
-    Route::post('/add-new-language','SettingsController@createLanguage');
-    Route::post('/delete-language/{id}','SettingsController@deleteLanguage')->name('admin.settings.delete_language');
-
-    Route::get('/edit-language/{id}','SettingsController@editLanguage')->name('admin.settings.edit_language');
-    Route::post('/edit-language/{id}','SettingsController@postEditLanguage');
+    Route::get('/','Admin\IndexController@settings')->name('admin.settings');
+    Route::post('/','Admin\IndexController@postSettingSave')->name('admin.settings.post');
+    Route::get('/pdf','Admin\IndexController@downloadPdf')->name('admin.settings.pdf.download');
 });

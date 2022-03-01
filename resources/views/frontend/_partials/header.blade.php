@@ -55,7 +55,7 @@
                 </ul>
             </nav>
 
-            <button class="normal-font red-button-font red-button">Скачать каталог</button>
+            <a href="{{ route('pdf.download') }}" class="normal-font red-button-font red-button">Скачать каталог</a>
         </div>
     </div>
 </header>

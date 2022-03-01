@@ -51,6 +51,8 @@ class RouteServiceProvider extends ServiceProvider
                 ->middleware('admin')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/admin.php'));
+
+            $this->mapDataTableRoutes();
         });
     }
 
@@ -64,5 +66,13 @@ class RouteServiceProvider extends ServiceProvider
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
         });
+    }
+
+    protected function mapDataTableRoutes()
+    {
+        Route::middleware('admin')
+            ->prefix('admin')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/datatable.php'));
     }
 }

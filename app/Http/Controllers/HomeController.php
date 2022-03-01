@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Settings;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -34,5 +35,12 @@ class HomeController extends Controller
     public function contact()
     {
         return view('frontend.contact');
+    }
+
+    public function downloadPdf(Settings $settings)
+    {
+        $model = $settings->getEditableData("main_settings")->toArray();
+        $path = storage_path("app" . DS ."public"  . DS ."documents" . DS . "pdf" . DS . $model['pdf']);
+        return response()->download($path,'каталог.pdf');
     }
 }

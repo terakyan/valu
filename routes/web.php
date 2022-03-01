@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', "HomeController@index")->name('home');
 Route::get('/about-us', "HomeController@about")->name('about');
 Route::get('/contact-us', "HomeController@contact")->name('contact');
+Route::get('/pdf','HomeController@downloadPdf')->name('pdf.download');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

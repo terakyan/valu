@@ -41,7 +41,18 @@
                         Dashboard
                     </a>
                 </li>
-
+                <li>
+                    <a href="{!! route('admin.products') !!}" class="mm-active">
+                        <i class="metismenu-icon pe-7s-albums"></i>
+                        Products
+                    </a>
+                </li>
+                <li>
+                    <a href="{!! route('admin.settings') !!}" class="mm-active">
+                        <i class="metismenu-icon pe-7s-config"></i>
+                        Settings
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
