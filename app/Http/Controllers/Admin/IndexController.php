@@ -105,6 +105,7 @@ class IndexController extends Controller
     public function downloadPdf(Settings $settings)
     {
         $model = $settings->getEditableData("main_settings")->toArray();
+        if(!isset($model['pdf'])) return redirect()->back();
         $path = storage_path("app" . DS ."public"  . DS ."documents" . DS . "pdf" . DS . $model['pdf']);
         return response()->download($path,'каталог.pdf');
     }
