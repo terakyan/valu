@@ -29,14 +29,25 @@
                 <p class="info-text">Телефон:</p>
             </div>
             <div class="tw rel">
-                <p class="info-text info-text-social"><b class="info-bold-text">+374 91 221 688</b>
-                    <span class="social">
-                        <img src="{!! asset('/img/whatsapp.svg') !!}" alt="WhatsApp">
-                        <img src="{!! asset('/img/viber.svg') !!}" alt="Viber">
-                    </span>
-                </p>
-                <p class="info-text info-text-social"><b class="info-bold-text">+374 77 300 424</b></p>
-                <p class="info-text info-text-social"><b class="info-bold-text">+7 958 4022 170</b></p>
+                @if(isset($model['phones']))
+                    @php
+                        $phones = json_decode($model['phones'],true);
+                    @endphp
+                    @if($phones && is_array($phones))
+                        @foreach($phones as $key => $phone)
+                            <p class="info-text info-text-social"><b class="info-bold-text">{!! $phone['number'] !!}</b>
+                            <span class="social">
+                                @if($phone['whatsapp'] == 1)
+                                    <img src="{!! asset('/img/whatsapp.svg') !!}" alt="WhatsApp">
+                                @endif
+                                @if($phone['viber'] == 1)
+                                    <img src="{!! asset('/img/viber.svg') !!}" alt="Viber">
+                                @endif
+                            </span>
+                            </p>
+                        @endforeach
+                    @endif
+                @endif
             </div>
         </div>
     </div>

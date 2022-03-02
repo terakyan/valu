@@ -38,11 +38,6 @@
             <span class="item-font">{!! $dog->name !!}</span>
         </div>
         @endforeach
-
-        <div class="item">
-            <img src="./img/item.jpg" alt="Item" class="item-img">
-            <span class="item-font">Парвовирусный/ Коронавирусный энтерит (CPV Ag/CCV Ag)</span>
-        </div>
     </div>
 
     <div class="items-container items-container_js" data-id="2">
@@ -52,11 +47,6 @@
                 <span class="item-font">{!! $cat->name !!}</span>
             </div>
         @endforeach
-        <div class="item">
-            <img src="./img/item2.jpg" alt="Item" class="item-img">
-            <span class="item-font">Парвовирусный/ Коронавирусный энтерит (CPV Ag/CCV Ag)</span>
-        </div>
-
     </div>
 
     <div class="up up_js hide">
