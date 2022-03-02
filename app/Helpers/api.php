@@ -108,3 +108,27 @@ function no_image()
 {
     return "/images/no_image.png";
 }
+
+function get_site_email()
+{
+    $settings = new Settings();
+    $model = $settings->getEditableData("main_settings")->toArray();
+
+    return (isset($model['company_email'])) ? $model['company_email'] : '';
+}
+
+function get_site_phone()
+{
+    $settings = new Settings();
+    $model = $settings->getEditableData("main_settings")->toArray();
+    $main = (isset($model['main'])) ? $model['main'] :null;
+    $phone = null;
+
+    if($main && $model['phones']){
+        $phones = json_decode($model['phones'],true);
+        if(isset($phones[$main])){
+            $phone = $phones[$main]['number'];
+        }
+    }
+    return $phone;
+}

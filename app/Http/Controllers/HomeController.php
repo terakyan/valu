@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Settings;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,11 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
+    public $settings;
 
+    public function __construct(Settings $settings)
+    {
+        $this->settings = $settings;
     }
 
     /**
@@ -24,22 +27,29 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('frontend.home');
+        $settings = $this->settings->getEditableData("main_settings")->toArray();
+        $dogs = Product::where('status',true)->where('category',1)->get();
+        $cats = Product::where('status',true)->where('category',2)->get();
+        return view('frontend.home',compact(['settings','dogs','cats']));
     }
 
     public function about()
     {
-        return view('frontend.about');
+        $model = $this->settings->getEditableData("about")->toArray();
+
+        return view('frontend.about',compact('model'));
     }
 
     public function contact()
     {
-        return view('frontend.contact');
+        $model = $this->settings->getEditableData("main_settings")->toArray();
+
+        return view('frontend.contact',compact('model'));
     }
 
-    public function downloadPdf(Settings $settings)
+    public function downloadPdf()
     {
-        $model = $settings->getEditableData("main_settings")->toArray();
+        $model = $this->settings->getEditableData("main_settings")->toArray();
         $path = storage_path("app" . DS ."public"  . DS ."documents" . DS . "pdf" . DS . $model['pdf']);
         return response()->download($path,'каталог.pdf');
     }

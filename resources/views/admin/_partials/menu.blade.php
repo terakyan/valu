@@ -42,9 +42,22 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{!! route('admin.profile') !!}" class="mm-active">
+                        <i class="metismenu-icon pe-7s-user"></i>
+                        Profile
+                    </a>
+                </li>
+                <li>
                     <a href="{!! route('admin.products') !!}" class="mm-active">
                         <i class="metismenu-icon pe-7s-albums"></i>
                         Products
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{!! route('admin.about') !!}" class="mm-active">
+                        <i class="metismenu-icon pe-7s-cloud"></i>
+                        About Us
                     </a>
                 </li>
                 <li>

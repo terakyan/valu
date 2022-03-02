@@ -3,17 +3,17 @@
 <h2 class="info-title">Контактная информация</h2>
 <div class="middle-block">
     <div class="contact-block-container">
-        <p class="info-text subt top"><b class="info-bold-text">ООО “ВАЛУ”</b></p>
+        <p class="info-text subt top"><b class="info-bold-text">{!! @$model['company_name'] !!}</b></p>
 
         <div class="between">
             <div>
                 <p class="info-text">Адрес:</p>
             </div>
             <div class="tw">
-                <p class="info-text dark">Республика Армения, Ереван</p>
-                <p class="info-text dark">0069, ул. Агароняна 12/36</p>
+                <p class="info-text dark">{!! @$model['company_address'] !!}</p>
+                <p class="info-text dark">{!! @$model['company_address2'] !!}</p>
                 <br>
-                <p class="info-text dark">ИНН 01022533</p>
+                <p class="info-text dark">{!! @$model['company_code'] !!}</p>
             </div>
         </div>
         <div class="between">
@@ -21,7 +21,7 @@
                 <p class="info-text">Эл. адрес:</p>
             </div>
             <div class="tw">
-                <p class="info-text dark">valu.manufacturing@gmail.com</p>
+                <p class="info-text dark">{!! @$model['company_email'] !!}</p>
             </div>
         </div>
         <div class="between">
@@ -29,13 +29,14 @@
                 <p class="info-text">Телефон:</p>
             </div>
             <div class="tw rel">
-                <p class="info-text"><b class="info-bold-text">+374 91 221 688</b></p>
-                <p class="info-text"><b class="info-bold-text">+374 77 300 424</b></p>
-                <p class="info-text"><b class="info-bold-text">+7 958 4022 170</b></p>
-                <div class="social">
-                    <img src="./img/whatsapp.svg" alt="WhatsApp">
-                    <img src="./img/viber.svg" alt="Viber">
-                </div>
+                <p class="info-text info-text-social"><b class="info-bold-text">+374 91 221 688</b>
+                    <span class="social">
+                        <img src="{!! asset('/img/whatsapp.svg') !!}" alt="WhatsApp">
+                        <img src="{!! asset('/img/viber.svg') !!}" alt="Viber">
+                    </span>
+                </p>
+                <p class="info-text info-text-social"><b class="info-bold-text">+374 77 300 424</b></p>
+                <p class="info-text info-text-social"><b class="info-bold-text">+7 958 4022 170</b></p>
             </div>
         </div>
     </div>

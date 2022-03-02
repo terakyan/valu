@@ -15,8 +15,7 @@
     <div class="products-title-container">
         <h2 class="title_second-font">Наша Продукция</h2>
 
-        <p class="normal-font">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-            has been.</p>
+        <p class="normal-font">{!! @$settings['category_subtitle'] !!}</p>
 
         <ul class="products-nav">
             <li>
@@ -33,30 +32,13 @@
     </div>
 
     <div class="items-container items-container_js active" data-id="1">
+        @foreach($dogs as $dog)
         <div class="item">
-            <img src="./img/item.jpg" alt="Item" class="item-img">
-            <span class="item-font">Парвовирусный/ Коронавирусный энтерит (CPV Ag/CCV Ag)</span>
+            <img src="{!! \App\Services\ImgService::renderImg('products',$dog->image) !!}" alt="Item" class="item-img">
+            <span class="item-font">{!! $dog->name !!}</span>
         </div>
-        <div class="item">
-            <img src="./img/item.jpg" alt="Item" class="item-img">
-            <span class="item-font">Парвовирусный/ Коронавирусный энтерит (CPV Ag/CCV Ag)</span>
-        </div>
-        <div class="item">
-            <img src="./img/item.jpg" alt="Item" class="item-img">
-            <span class="item-font">Парвовирусный/ Коронавирусный энтерит (CPV Ag/CCV Ag)</span>
-        </div>
-        <div class="item">
-            <img src="./img/item.jpg" alt="Item" class="item-img">
-            <span class="item-font">Парвовирусный/ Коронавирусный энтерит (CPV Ag/CCV Ag)</span>
-        </div>
-        <div class="item">
-            <img src="./img/item.jpg" alt="Item" class="item-img">
-            <span class="item-font">Парвовирусный/ Коронавирусный энтерит (CPV Ag/CCV Ag)</span>
-        </div>
-        <div class="item">
-            <img src="./img/item.jpg" alt="Item" class="item-img">
-            <span class="item-font">Парвовирусный/ Коронавирусный энтерит (CPV Ag/CCV Ag)</span>
-        </div>
+        @endforeach
+
         <div class="item">
             <img src="./img/item.jpg" alt="Item" class="item-img">
             <span class="item-font">Парвовирусный/ Коронавирусный энтерит (CPV Ag/CCV Ag)</span>
@@ -64,26 +46,17 @@
     </div>
 
     <div class="items-container items-container_js" data-id="2">
+        @foreach($cats as $cat)
+            <div class="item">
+                <img src="{!! \App\Services\ImgService::renderImg('products',$cat->image) !!}" alt="Item" class="item-img">
+                <span class="item-font">{!! $cat->name !!}</span>
+            </div>
+        @endforeach
         <div class="item">
             <img src="./img/item2.jpg" alt="Item" class="item-img">
             <span class="item-font">Парвовирусный/ Коронавирусный энтерит (CPV Ag/CCV Ag)</span>
         </div>
-        <div class="item">
-            <img src="./img/item2.jpg" alt="Item" class="item-img">
-            <span class="item-font">Парвовирусный/ Коронавирусный энтерит (CPV Ag/CCV Ag)</span>
-        </div>
-        <div class="item">
-            <img src="./img/item2.jpg" alt="Item" class="item-img">
-            <span class="item-font">Парвовирусный/ Коронавирусный энтерит (CPV Ag/CCV Ag)</span>
-        </div>
-        <div class="item">
-            <img src="./img/item2.jpg" alt="Item" class="item-img">
-            <span class="item-font">Парвовирусный/ Коронавирусный энтерит (CPV Ag/CCV Ag)</span>
-        </div>
-        <div class="item">
-            <img src="./img/item2.jpg" alt="Item" class="item-img">
-            <span class="item-font">Парвовирусный/ Коронавирусный энтерит (CPV Ag/CCV Ag)</span>
-        </div>
+
     </div>
 
     <div class="up up_js hide">

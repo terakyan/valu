@@ -22,6 +22,6 @@
     @include('frontend._partials.footer')
 </div>
 
-<script src="{!! asset('js/main.js') !!}./index.js"></script>
+<script src="{!! asset('js/main.js') !!}"></script>
 </body>
 </html>

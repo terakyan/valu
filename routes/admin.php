@@ -21,3 +21,14 @@ Route::group(['prefix'=>'settings'],function (){
     Route::post('/','Admin\IndexController@postSettingSave')->name('admin.settings.post');
     Route::get('/pdf','Admin\IndexController@downloadPdf')->name('admin.settings.pdf.download');
 });
+
+Route::group(['prefix'=>'about-us'],function (){
+    Route::get('/','Admin\IndexController@about')->name('admin.about');
+    Route::post('/','Admin\IndexController@postAbout')->name('admin.about.post');
+});
+
+Route::group(['prefix'=>'profile'],function (){
+    Route::get('/','Admin\IndexController@profile')->name('admin.profile');
+    Route::post('/','Admin\IndexController@postProfile')->name('admin.profile.post');
+    Route::post('/change-password','Admin\IndexController@postChangePassword')->name('admin.profile.change-password');
+});
