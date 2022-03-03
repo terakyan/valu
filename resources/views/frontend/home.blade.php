@@ -2,7 +2,7 @@
 @section('content')
     <div class="title-img-container">
         <div>
-            <h3 class="subtitle-font">Изготовления и продажа</h2>
+            <h3 class="subtitle-font">Изготовление и продажа</h2>
                 <h1 class="title-font">Экспресс-Тестов</h1>
                 <h4 class="subtitle_second-font">Правильное лечение начинается с точной диагностики</h3>
         </div>
