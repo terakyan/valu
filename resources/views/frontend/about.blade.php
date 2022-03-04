@@ -1,4 +1,7 @@
 @extends('layouts.frontend')
+@section('title')
+    <title>О компании</title>
+@stop
 @section('content')
 <div class="info-container">
     <h2 class="info-title">О компании</h2>

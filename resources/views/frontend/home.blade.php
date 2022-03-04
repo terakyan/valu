@@ -1,4 +1,7 @@
 @extends('layouts.frontend')
+@section('title')
+    <title>Главная</title>
+@stop
 @section('content')
     <div class="title-img-container">
         <div>

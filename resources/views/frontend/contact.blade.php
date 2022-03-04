@@ -1,4 +1,7 @@
 @extends('layouts.frontend')
+@section('title')
+    <title>Контактная информация</title>
+@stop
 @section('content')
 <h2 class="info-title">Контактная информация</h2>
 <div class="middle-block">
