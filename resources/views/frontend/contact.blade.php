@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 @section('title')
-    <title>Изготовитель Экспресс Тестов Для Животных | Контакт </title>
+    <title>Изготовитель экспресс-тестов для животных | Контакт </title>
     <meta name="description" content="На сайте valu.am представлен большой ассортимент экспресс-тестов для домашних животных. Для заказа ☎: +374 77 30-04-24 или ✉ info@valu.am">
 @stop
 @section('content')

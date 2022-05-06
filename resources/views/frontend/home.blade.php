@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 @section('title')
-    <title>Экспресс Тестов Для Домашних Животных | Valu.am</title>
-    <meta name="description" content="Качественный и недорогой экспресс тест для домашних животных. ☝ Правильное лечение может быть проведено при точной диагностике. ☝">
+    <title>Экспресс-тесты для домашних животных | Valu.am</title>
+    <meta name="description" content="Качественные и недорогие экспресс-тесты для домашних животных. ☝️Правильное лечение может быть проведено при точной диагностике. ☝️">
 @stop
 @section('content')
     <div class="title-img-container">
