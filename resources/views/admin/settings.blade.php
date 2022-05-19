@@ -76,7 +76,7 @@
                                 <div class="col-md-12 d-flex mb-3 single-contact">
                                     <div class="col-md-2">
                                         <div class="form-check">
-                                            {!! Form::radio('main',$key,null,['class'=>'form-check-input','id' => "flexRadioDefault$key"]) !!}
+                                            {!! Form::checkbox("phones[$key][main]",1,@$phone['main'],['class'=>'form-check-input','id' => "flexRadioDefault$key"]) !!}
                                             <label class="form-check-label" for="flexRadioDefault{{$key}}">
                                                 Main
                                             </label>
@@ -109,7 +109,7 @@
                         <div class="col-md-12 d-flex mb-3 single-contact">
                             <div class="col-md-2">
                                 <div class="form-check">
-                                    {!! Form::radio('main',"0",null,['class'=>'form-check-input','id' => "flexRadioDefault0"]) !!}
+                                    {!! Form::checkbox('main',"0",null,['class'=>'form-check-input','id' => "flexRadioDefault0"]) !!}
                                     <label class="form-check-label" for="flexRadioDefault0">
                                         Main
                                     </label>

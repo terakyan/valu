@@ -39,12 +39,16 @@
                 </svg>
                 <span><a href = "mailto:{{ get_site_email() }}">{{ get_site_email() }}</a></span>
             </div>
+            @foreach(get_site_phone() as $phone)
             <div class="contact-font contact">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <span>
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18 13.5V17C18 17.5 17.5 18 17 18C7.6 18 0 10.4 0 1C0 0.5 0.5 0 1 0H4.5C5 0 5.5 0.5 5.5 1C5.5 2.2 5.7 3.5 6.1 4.6C6.2 4.9 6.1 5.3 5.9 5.6L3.6 7.8C5 10.6 7.4 12.9 10.2 14.4L12.4 12.2C12.6 12 12.8 11.9 13.1 11.9C13.2 11.9 13.3 11.9 13.4 11.9C14.5 12.3 15.7 12.5 17 12.5C17.5 12.5 18 13 18 13.5Z" fill="#7297AB"/>
-                </svg>
-                <span><a href="tel:{!! get_site_phone() !!}">{!! get_site_phone() !!}</a></span>
+                    </svg>
+                    <span><a href="tel:{{ $phone }}">{{ $phone }}</a></span>
+                </span>
             </div>
+            @endforeach
         </div>
 
         <div class="navigation-container">
